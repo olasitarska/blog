@@ -66,6 +66,24 @@ def post_new(request):
         'form': form
     })
 
+@login_required
+def post_edit(request, post_pk):
+    post = get_object_or_404(Post, pk=post_pk)
+
+    if request.method == 'POST':
+        form = PostForm(request.POST, instance=post, user=request.user)
+        if form.is_valid():
+            post = form.save()
+            messages.success(request, u'Your post has been saved!')
+            return redirect('posts:post_detail', post_pk=post.pk, slug=post.slug)
+
+    else:
+        form = PostForm(instance=post, user=request.user)
+
+    return render(request, 'posts/post_edit.html', {
+        'form': form
+    })
+
 
 @login_required
 def post_toggle_publish(request, post_pk):

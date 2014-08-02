@@ -22,7 +22,9 @@ class PostForm(forms.ModelForm):
     def save(self, commit=True):
         post = super(PostForm, self).save(commit=False)
         post.author = self._user
-        post.slug = slugify(post.title)
+
+        if not post.slug:
+            post.slug = slugify(post.title)
 
         if commit:
             post.save()
