@@ -1,0 +1,24 @@
+{% load staticfiles %}<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>{% block title %}Blog about Potato Salad{% endblock %}</title>
+
+    <link rel="shortcut icon" href="{% static 'img/favicon.ico' %}" />
+    <link href='http://fonts.googleapis.com/css?family=Gentium+Book+Basic:400,400italic,700italic,700|Open+Sans:400italic,600italic,700italic,400,600,700' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" type="text/css" href="{% static 'css/normalise.css' %}" media="screen">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" media="screen">
+</head>
+<body>
+
+    {% include "includes/nav.html" %}
+
+    <main>
+        {% block content %}Test{% endblock %}
+    </main>
+
+    {% include "includes/footer.html" %}
+
+</body>
+</html>
