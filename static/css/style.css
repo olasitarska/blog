@@ -1,3 +1,154 @@
+html,
 body {
+  font: 24px/1.5 'Gentium Book Basic', sans-serif;
+  text-rendering: optimizeLegibility;
+  height: 100%;
+}
+.wrapper {
+  width: 950px;
+  margin: 0 auto 30px auto;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: 'Open Sans';
+  font-weight: 600;
+  margin-top: 0;
+}
+a {
+  color: #44cca7;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+.clearfix {
+  clear: both;
+}
+.btn {
+  background: rgba(68, 204, 167, 0.7);
+  color: white;
+  text-transform: uppercase;
+  font-weight: 300;
+  font-family: 'Open Sans';
+  padding: 7px 20px;
+  border-radius: 3px;
+  font-size: 16px;
+}
+.btn:hover {
+  text-decoration: none;
+  background: #44cca7;
+}
+.btn-primary {
+  background: #44cca7;
+}
+header#header {
+  background-image: linear-gradient(#ffffff, rgba(255, 255, 255, 0.9) 40%, rgba(255, 255, 255, 0));
+  position: fixed;
+  padding-top: 30px;
+  width: 950px;
+  height: 140px;
+  top: 0;
+}
+header#header h1 {
+  float: left;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+header#header h1 em {
+  font-family: 'Gentium Book Basic';
+  text-transform: none;
+  font-weight: 300;
+}
+header#header h1 a {
+  color: rgba(0, 0, 0, 0.8);
+}
+header#header h1 a:hover {
+  text-decoration: none;
+}
+header#header nav {
+  float: right;
+  margin-top: 1.5em;
+  font-family: 'Open Sans';
+  font-size: 18px;
+}
+header#header nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+header#header nav ul li {
+  display: inline;
+}
+header#header nav ul li .btn {
+  background: rgba(0, 0, 0, 0.1);
+}
+header#header nav ul li .btn-primary,
+header#header nav ul li .btn:hover {
+  background: rgba(0, 0, 0, 0.4);
+}
+main {
+  margin-top: 140px;
+}
+main article {
+  margin-bottom: 2.5em;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  padding-top: 2em;
+}
+main article header h2 {
+  text-align: center;
+  font-weight: 700;
+}
+main article header h2 a {
+  color: black;
+}
+main article header p {
+  text-align: justify;
+}
+main article footer .metadata {
+  float: left;
+  font-family: 'Open Sans';
+  text-transform: uppercase;
+  color: rgba(0, 0, 0, 0.3);
+  font-size: 16px;
+  font-weight: 400;
+  margin-top: 5px;
+}
+main article footer .metadata a {
+  color: rgba(0, 0, 0, 0.3);
+}
+main article footer .metadata .date {
+  padding-right: 18px;
+  border-right: 1px solid rgba(0, 0, 0, 0.1);
+  margin-right: 15px;
+}
+main article footer .edit-options {
+  float: right;
+}
+main .pagination {
+  margin-bottom: 30px;
+  font-family: 'Open Sans';
+  text-align: center;
+  font-size: 15px;
+  color: rgba(0, 0, 0, 0.8);
+  opacity: 0.5;
+}
+main .pagination a,
+main .pagination b {
+  padding: 0 10px;
+}
+main .pagination b {
+  font-weight: 800;
+}
+main .pagination a {
+  color: rgba(0, 0, 0, 0.8);
+}
+main .pagination a:hover {
+  text-decoration: none;
+}
+main .pagination:hover {
+  opacity: 1;
 }

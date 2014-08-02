@@ -1,3 +1,178 @@
-body {
-    font-family: 'Open Sans';
+@color: #44cca7;
+@gray: rgba(0,0,0,0.8);
+@width: 950px;
+@serif: 'Gentium Book Basic';
+@sans: 'Open Sans';
+
+html, body {
+    font: 24px/1.5 @serif, sans-serif;
+    text-rendering: optimizeLegibility;
+    height: 100%;
+}
+
+.wrapper {
+    width: @width;
+    margin: 0 auto 30px auto;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: @sans;
+    font-weight: 600;
+    margin-top: 0;
+}
+
+a {
+    color: @color;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+
+.clearfix {
+    clear: both;
+}
+
+.btn {
+    background: rgba(68, 204, 167, 0.7);
+    color: white;
+    text-transform: uppercase;
+    font-weight: 300;
+    font-family: @sans;
+    padding: 7px 20px;
+    border-radius: 3px;
+    font-size: 16px;
+}
+.btn:hover {
+    text-decoration: none;
+    background: @color;
+}
+.btn-primary {
+    background: @color;
+}
+
+header#header {
+    background-image: linear-gradient(white, rgba(255, 255, 255, 0.9) 40%, rgba(255, 255, 255, 0));
+    position: fixed;
+    padding-top: 30px;
+    width: @width;
+    height: 140px;
+    top: 0;
+
+    h1 {
+        float: left;
+        font-weight: 800;
+        text-transform: uppercase;
+
+        em {
+            font-family: @serif;
+            text-transform: none;
+            font-weight: 300;
+        }
+
+        a {
+            color: @gray;;
+        }
+        a:hover {
+            text-decoration: none;
+        }
+    }
+    nav {
+        float: right;
+        margin-top: 1.5em;
+        font-family: @sans;
+        font-size: 18px;
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            li {
+                display: inline;
+
+                .btn {
+                    background: rgba(0,0,0,0.1);
+                }
+                .btn-primary, .btn:hover {
+                    background: rgba(0,0,0,0.4);
+                }
+
+
+            }
+        }
+
+
+    }
+}
+
+main {
+    margin-top: 140px;
+
+    article {
+        margin-bottom: 2.5em;
+        border-top: 1px solid rgba(0,0,0,0.1);
+        padding-top: 2em;
+
+        header {
+            h2 {
+                text-align: center;
+                font-weight: 700;
+                a {
+                    color: black;
+                }
+            }
+            p {
+                text-align: justify;
+            }
+        }
+
+        footer {
+            .metadata {
+                float: left;
+                font-family: @sans;
+                text-transform: uppercase;
+                color: rgba(0,0,0,0.3);
+                font-size: 16px;
+                font-weight: 400;
+                margin-top: 5px;
+
+                a {
+                    color: rgba(0,0,0,0.3);
+                }
+                .date {
+                    padding-right: 18px;
+                    border-right: 1px solid rgba(0,0,0,0.1);
+                    margin-right: 15px;
+                }
+            }
+            .edit-options {
+                float: right;
+            }
+        }
+    }
+
+    .pagination {
+        margin-bottom: 30px;
+        font-family: @sans;
+        text-align: center;
+        font-size: 15px;
+        color: @gray;
+        opacity: 0.5;
+
+        a, b {
+            padding: 0 10px;
+        }
+        b {
+            font-weight: 800;
+        }
+        a {
+            color: @gray;
+        }
+        a:hover {
+            text-decoration: none;
+        }
+    }
+    .pagination:hover {
+        opacity: 1;
+    }
 }

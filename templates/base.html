@@ -5,20 +5,25 @@
     <title>{% block title %}Blog about Potato Salad{% endblock %}</title>
 
     <link rel="shortcut icon" href="{% static 'img/favicon.ico' %}" />
-    <link href='http://fonts.googleapis.com/css?family=Gentium+Book+Basic:400,400italic,700italic,700|Open+Sans:400italic,600italic,700italic,400,600,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Gentium+Book+Basic:400,400italic,700italic,700|Open+Sans:400italic,600italic,700italic,400,600,700,800' rel='stylesheet' type='text/css'>
 
     <link rel="stylesheet" type="text/css" href="{% static 'css/normalise.css' %}" media="screen">
     <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" media="screen">
 </head>
 <body>
+<div class="wrapper">
+    <header id="header">
+        <h1><a href="{% url 'posts:post_list' %}">Potato <em>Salad</em> Blog</a></h1>
+        {% include "includes/nav.html" %}
+    </header>
 
-    {% include "includes/nav.html" %}
+    <div class="clearfix"></div>
 
     <main>
-        {% block content %}Test{% endblock %}
+        {% block content %}{% endblock %}
     </main>
 
     {% include "includes/footer.html" %}
-
+</div>
 </body>
 </html>
