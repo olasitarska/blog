@@ -31,7 +31,6 @@ def post_list(request):
 
 
 def post_detail(request, post_pk, slug):
-
     if request.user.is_authenticated():
         post = get_object_or_404(Post, pk=post_pk)
     else:
@@ -56,3 +55,11 @@ def post_toggle_publish(request, post_pk):
         messages.success(request, u'Your post has been published!')
 
     return redirect('posts:post_detail',  post_pk=post.pk, slug=post.slug)
+
+@login_required
+def post_remove(request, post_pk):
+    post = get_object_or_404(Post, pk=post_pk)
+    post.delete()
+    messages.success(request, u'Post {0} has been removed.'.format(post.title))
+
+    return redirect('posts:post_list')

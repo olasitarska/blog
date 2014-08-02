@@ -67,3 +67,16 @@ class PostsViewsTestCase(TestCase):
 
         # Check if post isn't public
         self.assertFalse(Post.objects.get(pk=1).is_public())
+
+    def test_post_remove(self):
+        # Create post:
+        post = Post.objects.create(author=self.user, title='To remove', content='b')
+        self.assertTrue(Post.objects.filter(title='To remove').exists())
+
+        # Perform a request
+        self.client.login(username='olasitarska', password='o')
+        response = self.client.get(reverse('posts:post_remove', kwargs={'post_pk': post.pk}))
+        self.assertEqual(response.status_code, 302)
+
+        # Check if post does not exist anymore:
+        self.assertFalse(Post.objects.filter(title='To remove').exists())
