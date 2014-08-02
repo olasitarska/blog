@@ -12,7 +12,6 @@ def post_list(request):
         post_list = Post.published.all().order_by('-published_date')
 
     # Pagination of posts
-
     paginator = Paginator(post_list, 3)
     page = request.GET.get('page')
     try:

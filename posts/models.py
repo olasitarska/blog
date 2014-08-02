@@ -7,7 +7,7 @@ class PostManager(models.Manager):
 
     def get_query_set(self):
 
-        return super(PostManager, self).get_query_set().filter(published_date__lte=datetime.datetime.now())
+        return super(PostManager, self).get_query_set().filter(published_date__isnull=False, published_date__lte=datetime.datetime.now())
 
 
 class Post(models.Model):
@@ -25,4 +25,8 @@ class Post(models.Model):
 
     def publish(self):
         self.published_date = datetime.datetime.now()
+        self.save()
+
+    def unpublish(self):
+        self.published_date = None
         self.save()
