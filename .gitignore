@@ -1,0 +1,7 @@
+*.pyc
+autoload*
+django*
+dbindexer*
+djangoappengine*
+djangotoolbox*
+.gaedata
