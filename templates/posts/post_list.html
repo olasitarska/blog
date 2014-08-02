@@ -32,20 +32,30 @@
                         <a href="" class="btn">Unpublish</a>
                     </div>
                 {% endif %}
-                
+
                 <div class="clearfix"></div>
             </footer>
         </article>
     {% endfor %}
 
+    {% if post_list.has_previous or post_list.has_next %}
+        <div class="pagination">
+            {% if post_list.has_previous %}
+                <a href="?page={{ post_list.previous_page_number }}">previous</a>
+            {% endif %}
 
-    <div class="pagination">
-        <a href="">prev</a>
-        <a href="">1</a>
-        <b>2</b>
-        <a href="3">3</a>
-        <a href="4">4</a>
-        <a href="">next</a>
-    </div>
+            {% for page in post_list.paginator.page_range %}
+                {% if page == post_list.number %}
+                    <b>{{ page }}</b>
+                {% else %}
+                    <a href="?page={{ page }}">{{ page }}</a>
+                {% endif %}
+            {% endfor %}
+
+            {% if post_list.has_next %}
+                <a href="?page={{ post_list.next_page_number }}">next</a>
+            {% endif %}
+        </div>
+    {% endif %}
 
 {% endblock %}
