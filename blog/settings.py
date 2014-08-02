@@ -5,6 +5,9 @@
 # of "djangoappengine" from this file.
 from djangoappengine.settings_base import *
 
+import os
+BASE_DIR = os.path.dirname(os.path.dirname(__file__))
+
 ADMINS = (
     # ('Your Name', 'your_email@example.com'),
 )
@@ -102,11 +105,7 @@ MIDDLEWARE_CLASSES = (
 
 ROOT_URLCONF = 'blog.urls'
 
-TEMPLATE_DIRS = (
-    # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
-    # Always use forward slashes, even on Windows.
-    # Don't forget to use absolute paths, not relative paths.
-)
+TEMPLATE_DIRS = [os.path.join(BASE_DIR, 'templates')]
 
 INSTALLED_APPS = (
     'django.contrib.auth',
