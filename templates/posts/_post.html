@@ -1,6 +1,6 @@
 <article>
     <header>
-        <h2><a href="{% url 'posts:post_detail' post_pk=item.pk %}">{{ item.title }}</a></h2>
+        <h2><a href="{% url 'posts:post_detail' post_pk=item.pk slug=item.slug %}">{{ item.title }}</a></h2>
     </header>
 
     {{ item.content|linebreaks }}
@@ -16,7 +16,7 @@
                     {% endif %}
                 </a>
             </span>
-            <a href="{% url 'posts:post_detail' post_pk=item.pk %}">Link</a>
+            <a href="{% url 'posts:post_detail' post_pk=item.pk slug=item.slug %}">Link</a>
         </div>
 
         {% if request.user.is_authenticated %}

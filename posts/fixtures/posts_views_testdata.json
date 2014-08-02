@@ -11,22 +11,24 @@
     "pk": 1,
     "model": "posts.post",
     "fields": {
+        "author": 1,
+        "title": "Mollis Ornare Amet Nullam Purus",
+        "created_date": "1992-08-02T14:42:21", 
         "content": "Vestibulum id ligula porta felis euismod semper. Aenean lacinia bibendum nulla sed consectetur. Aenean lacinia bibendum nulla sed consectetur. Maecenas faucibus mollis interdum. Donec ullamcorper nulla non metus auctor fringilla. Nulla vitae elit libero, a pharetra augue. Nullam quis risus eget urna mollis ornare vel eu leo.\r\n\r\nNullam id dolor id nibh ultricies vehicula ut id elit. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Maecenas sed diam eget risus varius blandit sit amet non magna. Donec sed odio dui. Donec sed odio dui.",
         "published_date": null,
-        "title": "Mollis Ornare Amet Nullam Purus",
-        "created_date": "1992-08-02T16:56:08",
-        "author": 1
+        "slug": "mollis-ornare-amet-nullam-purus"
     }
 },
 {
     "pk": 2,
     "model": "posts.post",
     "fields": {
-        "content": "Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Aenean lacinia bibendum nulla sed consectetur. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Sed posuere consectetur est at lobortis. Nulla vitae elit libero, a pharetra augue.\r\n\r\nNullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Vestibulum id ligula porta felis euismod semper. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.",
-        "published_date": "1992-08-02T18:56:36",
+        "author": 1,
         "title": "Test",
         "created_date": "1992-08-02T14:42:21",
-        "author": 1
+        "content": "Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Aenean lacinia bibendum nulla sed consectetur. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Sed posuere consectetur est at lobortis. Nulla vitae elit libero, a pharetra augue.\r\n\r\nNullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Vestibulum id ligula porta felis euismod semper. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.",
+        "published_date": "1992-08-02T14:42:21",
+        "slug": "test"
     }
 }
 ]

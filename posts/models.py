@@ -4,9 +4,7 @@ from django.contrib.auth.models import User
 from django.db import models
 
 class PostManager(models.Manager):
-
     def get_query_set(self):
-
         return super(PostManager, self).get_query_set().filter(published_date__isnull=False, published_date__lte=datetime.datetime.now())
 
 
@@ -16,6 +14,7 @@ class Post(models.Model):
     content = models.TextField()
     created_date = models.DateTimeField(default=datetime.datetime.now())
     published_date = models.DateTimeField(blank=True, null=True)
+    slug = models.SlugField(max_length=200)
 
     objects = models.Manager()
     published = PostManager()
