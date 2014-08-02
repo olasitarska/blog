@@ -128,6 +128,10 @@ main article footer .metadata .date {
 main article footer .edit-options {
   float: right;
 }
+main .draft header,
+main .draft .content {
+  opacity: 0.6;
+}
 main .pagination {
   margin-bottom: 30px;
   font-family: 'Open Sans';
@@ -151,4 +155,11 @@ main .pagination a:hover {
 }
 main .pagination:hover {
   opacity: 1;
+}
+ul.messages {
+  list-style-type: none;
+  padding: 0;
+}
+ul.messages .success {
+  color: #44cca7;
 }

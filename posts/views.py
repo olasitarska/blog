@@ -1,5 +1,7 @@
+from django.contrib.auth.decorators import login_required
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.shortcuts import render, get_object_or_404, redirect
+from django.contrib import messages
 
 from .models import Post
 
@@ -39,5 +41,18 @@ def post_detail(request, post_pk, slug):
         return redirect('posts:post_detail', post_pk=post.pk, slug=post.slug)
 
     return render(request, 'posts/post_detail.html', {
-        'post': post
+        'post': post,
     })
+
+@login_required
+def post_toggle_publish(request, post_pk):
+    post = get_object_or_404(Post, pk=post_pk)
+
+    if post.is_public():
+        post.unpublish()
+        messages.success(request, u'Your post has been unpublished.')
+    else:
+        post.publish()
+        messages.success(request, u'Your post has been published!')
+
+    return redirect('posts:post_detail',  post_pk=post.pk, slug=post.slug)

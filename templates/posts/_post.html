@@ -1,9 +1,11 @@
-<article>
+<article{% if not item.is_public %} class="draft"{% endif %}>
     <header>
-        <h2><a href="{% url 'posts:post_detail' post_pk=item.pk slug=item.slug %}">{{ item.title }}</a></h2>
+        <h2>{% if not item.is_public %}Draft: {% endif %}<a href="{% url 'posts:post_detail' post_pk=item.pk slug=item.slug %}">{{ item.title }}</a></h2>
     </header>
 
-    {{ item.content|linebreaks }}
+    <div class="content">
+        {{ item.content|linebreaks }}
+    </div>
 
     <footer>
         <div class="metadata">
@@ -23,7 +25,11 @@
             <div class="edit-options">
                 <a href="" class="btn">Edit</a>
                 <a href="" class="btn">Remove</a>
-                <a href="" class="btn">Unpublish</a>
+                {% if item.is_public %}
+                    <a href="{% url 'posts:post_toggle_publish' post_pk=item.pk %}" class="btn">Unpublish</a>
+                {% else %}
+                    <a href="{% url 'posts:post_toggle_publish' post_pk=item.pk %}" class="btn btn-primary">Publish!</a>
+                {% endif %}
             </div>
         {% endif %}
 

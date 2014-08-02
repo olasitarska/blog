@@ -4,7 +4,9 @@
     "model": "auth.user",
     "fields": {
         "username": "olasitarska",
-        "email": "ola@sitarska.com"
+        "email": "ola@sitarska.com",
+        "is_active": true,
+        "password": "op"
     }
 },
 {
@@ -13,7 +15,7 @@
     "fields": {
         "author": 1,
         "title": "Mollis Ornare Amet Nullam Purus",
-        "created_date": "1992-08-02T14:42:21", 
+        "created_date": "1992-08-02T14:42:21",
         "content": "Vestibulum id ligula porta felis euismod semper. Aenean lacinia bibendum nulla sed consectetur. Aenean lacinia bibendum nulla sed consectetur. Maecenas faucibus mollis interdum. Donec ullamcorper nulla non metus auctor fringilla. Nulla vitae elit libero, a pharetra augue. Nullam quis risus eget urna mollis ornare vel eu leo.\r\n\r\nNullam id dolor id nibh ultricies vehicula ut id elit. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Maecenas sed diam eget risus varius blandit sit amet non magna. Donec sed odio dui. Donec sed odio dui.",
         "published_date": null,
         "slug": "mollis-ornare-amet-nullam-purus"

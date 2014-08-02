@@ -151,6 +151,12 @@ main {
         }
     }
 
+    .draft {
+        header, .content {
+            opacity: 0.6;
+        }
+    }
+
     .pagination {
         margin-bottom: 30px;
         font-family: @sans;
@@ -174,5 +180,14 @@ main {
     }
     .pagination:hover {
         opacity: 1;
+    }
+}
+
+ul.messages {
+    list-style-type: none;
+    padding: 0;
+
+    .success {
+        color: @color;
     }
 }
