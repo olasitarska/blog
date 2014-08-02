@@ -54,3 +54,8 @@ class PostTestCase(TestCase):
 
         self.assertEqual(Post.objects.all().count(), 3)
         self.assertEqual(Post.published.all().count(), 1)
+
+    def test_is_public_method(self):
+        # Check if is_public method works
+        self.assertTrue(self.post_2.is_public())
+        self.assertFalse(self.post_1.is_public())

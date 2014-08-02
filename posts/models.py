@@ -29,3 +29,9 @@ class Post(models.Model):
     def unpublish(self):
         self.published_date = None
         self.save()
+
+    def is_public(self):
+        if self.published_date:
+            if self.published_date < datetime.datetime.now():
+                return True
+        return False
