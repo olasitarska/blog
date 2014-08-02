@@ -1,5 +1,5 @@
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 
 from .models import Post
 
@@ -25,4 +25,16 @@ def post_list(request):
 
     return render(request, 'posts/post_list.html', {
         'post_list': post_list
+    })
+
+
+def post_detail(request, post_pk):
+
+    if request.user.is_authenticated():
+        post = get_object_or_404(Post, pk=post_pk)
+    else:
+        post = get_object_or_404(Post.published.all(), pk=post_pk)
+
+    return render(request, 'posts/post_detail.html', {
+        'post': post
     })

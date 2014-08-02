@@ -1,0 +1,32 @@
+<article>
+    <header>
+        <h2><a href="{% url 'posts:post_detail' post_pk=item.pk %}">{{ item.title }}</a></h2>
+    </header>
+
+    {{ item.content|linebreaks }}
+
+    <footer>
+        <div class="metadata">
+            <span class="date">Posted on:
+                <a href="">
+                    {% if item.published_date %}
+                        {{ item.published_date|date:"D, d M Y" }}
+                    {% else %}
+                        {{ item.created_date|date:"D, d M Y" }}
+                    {% endif %}
+                </a>
+            </span>
+            <a href="{% url 'posts:post_detail' post_pk=item.pk %}">Link</a>
+        </div>
+
+        {% if request.user.is_authenticated %}
+            <div class="edit-options">
+                <a href="" class="btn">Edit</a>
+                <a href="" class="btn">Remove</a>
+                <a href="" class="btn">Unpublish</a>
+            </div>
+        {% endif %}
+
+        <div class="clearfix"></div>
+    </footer>
+</article>
