@@ -156,12 +156,17 @@ main .pagination a:hover {
 main .pagination:hover {
   opacity: 1;
 }
-ul.messages {
+ul.messages,
+ul.errorlist {
   list-style-type: none;
   padding: 0;
 }
-ul.messages .success {
+ul.messages .success,
+ul.errorlist .success {
   color: #44cca7;
+}
+ul.errorlist li {
+  color: #800000;
 }
 section.form label {
   display: none;

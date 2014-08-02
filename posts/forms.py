@@ -16,6 +16,8 @@ class PostForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         self._user = kwargs.pop('user')
         super(PostForm, self).__init__(*args, **kwargs)
+        self.fields['title'].error_messages = {'required': 'Title is required'}
+        self.fields['content'].error_messages = {'required': 'Text is required'}
 
     def save(self, commit=True):
         post = super(PostForm, self).save(commit=False)

@@ -183,12 +183,17 @@ main {
     }
 }
 
-ul.messages {
+ul.messages, ul.errorlist {
     list-style-type: none;
     padding: 0;
 
     .success {
         color: @color;
+    }
+}
+ul.errorlist {
+    li {
+        color: #800000;
     }
 }
 
