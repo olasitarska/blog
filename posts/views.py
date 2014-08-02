@@ -2,8 +2,10 @@ from django.contrib.auth.decorators import login_required
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib import messages
+from django.http import HttpResponse
 
 from .models import Post
+from .forms import PostForm
 
 def post_list(request):
 
@@ -42,6 +44,28 @@ def post_detail(request, post_pk, slug):
     return render(request, 'posts/post_detail.html', {
         'post': post,
     })
+
+@login_required
+def post_new(request):
+
+    if request.method == 'POST':
+        form = PostForm(request.POST, user = request.user)
+        if form.is_valid():
+            post = form.save()
+
+            if request.POST.get('action') == 'Publish now':
+                post.publish()
+
+            messages.success(request, u'Your post has been added!')
+            return redirect('posts:post_list')
+
+    else:
+        form = PostForm(user = request.user)
+
+    return render(request, 'posts/post_new.html', {
+        'form': form
+    })
+
 
 @login_required
 def post_toggle_publish(request, post_pk):

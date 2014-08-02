@@ -1,0 +1,27 @@
+from django import forms
+from django.template.defaultfilters import slugify
+
+from .models import Post
+
+class PostForm(forms.ModelForm):
+
+    class Meta:
+        model = Post
+        fields = ('title', 'content',)
+        widgets = {
+            'title': forms.TextInput(attrs={'placeholder': 'Title of your post'}),
+            'content': forms.Textarea(attrs={'placeholder': 'Start writing here..'}),
+        }
+
+    def __init__(self, *args, **kwargs):
+        self._user = kwargs.pop('user')
+        super(PostForm, self).__init__(*args, **kwargs)
+
+    def save(self, commit=True):
+        post = super(PostForm, self).save(commit=False)
+        post.author = self._user
+        post.slug = slugify(post.title)
+
+        if commit:
+            post.save()
+        return post

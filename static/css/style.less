@@ -56,7 +56,7 @@ header#header {
     position: fixed;
     padding-top: 30px;
     width: @width;
-    height: 140px;
+    height: 110px;
     top: 0;
 
     h1 {
@@ -189,5 +189,36 @@ ul.messages {
 
     .success {
         color: @color;
+    }
+}
+
+section.form {
+    label {
+        display: none;
+    }
+    input#id_title {
+        border: 0;
+        background: white;
+        width: 100%;
+        text-align: center;
+        font-weight: 700;
+        font-family: @sans;
+
+        &:focus {
+            outline:0;
+        }
+    }
+    textarea#id_content {
+        border: 0;
+        width: 100%;
+        min-height: 400px;
+        &:focus {
+            outline:0;
+        }
+    }
+    input[type="submit"] {
+        float: right;
+        margin-left: 5px;
+        border: 0;
     }
 }

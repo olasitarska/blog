@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+
+<section class="form">
+    <form action="." method="post">{% csrf_token %}
+        {{ form.as_p }}
+
+        <input type="submit" name="action" value="Publish now" class="btn btn-primary">
+        <input type="submit" name="action" value="Save as draft" class="btn">
+    </form>
+</section>
+
+<script type="text/javascript">
+    document.getElementById('id_content').focus();
+</script>
+{% endblock %}

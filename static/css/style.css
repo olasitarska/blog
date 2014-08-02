@@ -50,7 +50,7 @@ header#header {
   position: fixed;
   padding-top: 30px;
   width: 950px;
-  height: 140px;
+  height: 110px;
   top: 0;
 }
 header#header h1 {
@@ -162,4 +162,31 @@ ul.messages {
 }
 ul.messages .success {
   color: #44cca7;
+}
+section.form label {
+  display: none;
+}
+section.form input#id_title {
+  border: 0;
+  background: white;
+  width: 100%;
+  text-align: center;
+  font-weight: 700;
+  font-family: 'Open Sans';
+}
+section.form input#id_title:focus {
+  outline: 0;
+}
+section.form textarea#id_content {
+  border: 0;
+  width: 100%;
+  min-height: 400px;
+}
+section.form textarea#id_content:focus {
+  outline: 0;
+}
+section.form input[type="submit"] {
+  float: right;
+  margin-left: 5px;
+  border: 0;
 }
