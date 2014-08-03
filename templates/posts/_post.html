@@ -4,7 +4,7 @@
     </header>
 
     <div class="content">
-        {{ item.content|linebreaks }}
+        {{ item.content|safe|urlize|linebreaks }}
     </div>
 
     <footer>
