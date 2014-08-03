@@ -193,5 +193,20 @@ section.form textarea#id_content:focus {
 section.form input[type="submit"] {
   float: right;
   margin-left: 5px;
+}
+input[type="submit"] {
   border: 0;
+}
+form.login {
+  margin: 0 auto;
+  width: 280px;
+}
+form.login input[type="text"],
+form.login input[type="password"] {
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+  padding: 10px 15px;
+}
+form.login p {
+  text-align: center;
 }

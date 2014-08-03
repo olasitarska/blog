@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+
+    <form action="." method="post" class="login">{% csrf_token %}
+
+        <p>
+            <input type="text" name="username" placeholder="Username" />
+        </p>
+        <p>
+            <input type="password" name="password" placeholder="Password" />
+        </p>
+        <p>
+            <input type="submit" class="btn btn-primary" value="Login" />
+        </p>
+
+    </form>
+
+{% endblock %}

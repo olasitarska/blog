@@ -2,9 +2,9 @@
     <ul>
         {% if request.user.is_authenticated %}
             <li><a href="{% url 'posts:post_new' %}" class="btn btn-primary">Add post</a></li>
-            <li><a href="" class="btn">Logout</a></li>
+            <li><a href="{% url 'users:logout' %}" class="btn">Logout</a></li>
         {% else %}
-            <li><a href="" class="btn">Login</a></li>
+            <li><a href="{% url 'users:login' %}" class="btn">Login</a></li>
         {% endif %}
     </ul>
 </nav>
