@@ -76,9 +76,6 @@ STATICFILES_FINDERS = (
 #    'django.contrib.staticfiles.finders.DefaultStorageFinder',
 )
 
-# Make this unique, and don't share it with anybody.
-SECRET_KEY = '4tf2vo+-*wu0)pu3@ej+g!)e_8p-6d#miq1u6t9a938wp-9!3!'
-
 # List of callables that know how to import templates from various sources.
 TEMPLATE_LOADERS = (
     'django.template.loaders.filesystem.Loader',
@@ -162,3 +159,8 @@ LOGGING = {
 }
 
 MESSAGE_STORAGE = 'django.contrib.messages.storage.cookie.CookieStorage'
+
+try:
+    from blog.secret_keys import *
+except:
+    pass

@@ -6,3 +6,4 @@ djangoappengine*
 djangotoolbox*
 .gaedata
 black-outlet-660*
+blog/secret_keys.py
