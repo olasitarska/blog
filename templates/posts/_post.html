@@ -18,7 +18,8 @@
                     {% endif %}
                 </a>
             </span>
-            <a href="{% url 'posts:post_detail' post_pk=item.pk slug=item.slug %}">Link</a>
+            <a href="{% url 'posts:post_detail' post_pk=item.pk slug=item.slug %}#disqus_thread">Comments</a>
+
         </div>
 
         {% if request.user.is_authenticated %}
