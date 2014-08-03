@@ -160,6 +160,9 @@ LOGGING = {
 
 MESSAGE_STORAGE = 'django.contrib.messages.storage.cookie.CookieStorage'
 
+LOGIN_URL = '/login/'
+LOGIN_REDIRECT_URL = '/'
+
 try:
     from blog.secret_keys import *
 except:

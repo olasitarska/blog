@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block title %}Login | {% endblock %}
+
+{% block content %}
+
+    {{ form.non_field_errors }}
+    <form action="{{ action|default:"." }}" method="POST" class="login">{% csrf_token %}
+        {% for field in form.visible_fields %}
+            <p>
+                {{ field }}
+                {{ field.errors }}
+            </p>
+        {% endfor %}
+        <p>
+            <input class="btn btn-primary" type="submit" value="Login">
+        </p>
+    </form>
+
+{% endblock %}
