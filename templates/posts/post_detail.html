@@ -1,6 +1,8 @@
 {% extends 'base.html' %}
 {% load staticfiles %}
 
+{% block title %}{{ post.title }} | {% endblock %}
+
 {% block content %}
 
     {% include 'posts/_post.html' with item=post %}
